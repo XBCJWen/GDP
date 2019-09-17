@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1167</width>
+    <height>739</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1167</width>
+    <height>739</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>爬虫</string>
+  </property>
+  <property name="toolTip">
+   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;*{&lt;/p&gt;&lt;p&gt;background:red&lt;/p&gt;&lt;p&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">cancel{
+	background:red;
+}</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="" native="true">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>20</y>
+      <width>1101</width>
+      <height>711</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QFrame" name="gridFrame">
+       <property name="minimumSize">
+        <size>
+         <width>160</width>
+         <height>80</height>
+        </size>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QPlainTextEdit" name="input_text">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="plainText">
+           <string>文学 · · · · · ·
+小说(5954853)	外国文学(2260203)	文学(2012837)	随笔(1273858)
+中国文学(1271577)	经典(1264828)	日本文学(989651)	散文(766379)
+村上春树(475552)	诗歌(374004)	童话(336694)	儿童文学(290461)
+名著(289569)	古典文学(278123)	王小波(252523)	余华(250469)
+杂文(236254)	张爱玲(206440)	当代文学(194563)	外国名著(128519)
+钱钟书(124692)	鲁迅(108613)	诗词(93890)	茨威格(71577)
+米兰·昆德拉(58673)	杜拉斯(46107)	港台(8708)
+流行 · · · · · ·
+漫画(1384534)	推理(1082943)	绘本(989003)	青春(726258)
+东野圭吾(686623)	科幻(625654)	悬疑(624559)	言情(555093)
+奇幻(370119)	武侠(345324)	推理小说(342683)	日本漫画(321082)
+耽美(284006)	韩寒(267829)	网络小说(241143)	亦舒(240312)
+三毛(232095)	科幻小说(208047)	阿加莎·克里斯蒂(182915)	安妮宝贝(176110)
+金庸(172382)	穿越(161846)	郭敬明(156436)	轻小说(150290)
+魔幻(139432)	青春文学(134597)	几米(119032)	J.K.罗琳(102921)
+幾米(102625)	张小娴(98278)	古龙(79839)	高木直子(75738)
+校园(70724)	沧月(67336)	余秋雨(59045)	落落(58541)
+文化 · · · · · ·
+历史(2433161)	心理学(1582476)	哲学(1352939)	传记(876224)
+社会学(873696)	文化(830803)	艺术(597804)	社会(515872)
+设计(443996)	政治(435284)	建筑(294870)	宗教(293480)
+电影(277278)	政治学(272408)	数学(257041)	中国历史(223432)
+回忆录(204118)	思想(184608)	国学(166671)	人物传记(151514)
+艺术史(143905)	人文(142435)	音乐(135659)	绘画(128963)
+戏剧(122644)	西方哲学(97073)	二战(89072)	近代史(88097)
+军事(84524)	佛教(83116)	考古(59803)	自由主义(50974)
+美术(45466)
+生活 · · · · · ·
+爱情(1079523)	成长(707586)	生活(633091)	旅行(603415)
+心理(500253)	励志(447949)	女性(414751)	摄影(323295)
+教育(262923)	职场(234621)	美食(214769)	游记(168569)
+灵修(134194)	健康(98126)	情感(96696)	人际关系(55183)
+两性(52967)	手工(42498)	养生(40282)	家居(27433)
+自助游(2740)
+经管 · · · · · ·
+经济学(493283)	管理(475904)	经济(403011)	商业(366519)
+金融(320082)	投资(267993)	营销(176825)	理财(135587)
+创业(128081)	股票(74422)	广告(73484)	企业史(25425)
+策划(9547)
+科技 · · · · · ·
+科普(704504)	互联网(267070)	编程(176327)	科学(163917)
+交互设计(73883)	用户体验(60129)	算法(59048)	科技(33396)
+web(22431)	交互(5579)	通信(5420)	UE(5375)
+UCD(3598)	神经网络(3429)	程序(1335)</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="groupButtom">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLineEdit" name="inText">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="placeholderText">
+           <string>输入要爬取内容</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnInput">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>爬取</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionOPen">
+   <property name="text">
+    <string>OPen</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

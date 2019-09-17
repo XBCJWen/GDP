@@ -19,28 +19,6 @@ class GDSchool(object):
         self.number='1711605038'#input('请输入学号:')
         self.password='44162119980817247X'#input('请输入密码:')
 
-    def main(self):  #主入口
-        self.rssions=requests.session()
-        url='http://61.142.209.20:9090'
-        self.rssions.get(url=url)
-        url_login='http://61.142.209.20:9090/default2.aspx'
-        para=self.responseData()
-        code=self.resonseImage()
-        data={
-            '__VIEWSTATE':para['VIEWSTATE'],
-            '__EVENTVALIDATION':para['EVENTVALIDATION'],
-            'TextBox1':self.number,
-            'TextBox2':self.password,
-            'TextBox3':code,
-            'RadioButtonList1':'(unable to decode value)',
-            'Button1':''
-        }
-        log_response=self.rssions.post(url=url_login,headers=self.headers,data=data)
-        self.menu=self.responseMenu(log_response)         #菜单链接
-        self.name=re.findall(r'xm=(.*?)&gn',self.menu['信息查询'][0]['个人课表查询'],re.S)[0]
-        self.nameCode=self.name.encode('unicode_escape').decode().replace('\\u','%u')
-        self.parseClassTime(self.menu)
-
     def responseMenu(self,data): #获取菜单链接
         html=pq(data.text)
         mainItems = {}
@@ -74,20 +52,20 @@ class GDSchool(object):
         except Exception as e:
             print(e)
 
-    def parseClassTime(self, classre):  #选择课表信息
-        classUrl='http://61.142.209.20:9090/'+re.sub(self.name,self.nameCode,classre['信息查询'][0]['个人课表查询'],re.S)
-        dataParam=self.resonsePara()
-        # data={
-        #     '__EVENTTARGET':'xqd',
-        #     '__EVENTARGUMENT':'',
-        #     '__LASTFOCUS':'',
-        #     '__VIEWSTATE':
-        #     'xnd':'2019-2020',
-        #     'xqd':'1'
-        #
-        # }
-        #
-        # reClass=self.rssions.post(url=classUrl,headers=self.headers,data=data)
+    # def parseClassTime(self, classre):  #选择课表信息
+    #     classUrl='http://61.142.209.20:9090/'+re.sub(self.name,self.nameCode,classre['信息查询'][0]['个人课表查询'],re.S)
+    #     dataParam=self.resonsePara()
+    #     # data={
+    #     #     '__EVENTTARGET':'xqd',
+    #     #     '__EVENTARGUMENT':'',
+    #     #     '__LASTFOCUS':'',
+    #     #     '__VIEWSTATE':
+    #     #     'xnd':'2019-2020',
+    #     #     'xqd':'1'
+    #     #
+    #     # }
+    #     #
+    #     # reClass=self.rssions.post(url=classUrl,headers=self.headers,data=data)
 
     def resonsePara(self):  #第一次登录时的初始课表信息
         url='http://61.142.209.20:9090/'+self.menu['信息查询'][0]['个人课表查询']
@@ -110,6 +88,34 @@ class GDSchool(object):
         }
         reClss=self.rssions.get(url='http://61.142.209.20:9090/xskbcx.aspx?',params=data,headers=headers)
         return  reClss
+
+
+    def main(self):  #主入口
+        self.rssions=requests.session()
+        url='http://61.142.209.20:9090'
+        self.rssions.get(url=url)
+        url_login='http://61.142.209.20:9090/default2.aspx'
+        para=self.responseData()
+        code=self.resonseImage()
+        data={
+            '__VIEWSTATE':para['VIEWSTATE'],
+            '__EVENTVALIDATION':para['EVENTVALIDATION'],
+            'TextBox1':self.number,
+            'TextBox2':self.password,
+            'TextBox3':code,
+            'RadioButtonList1':'(unable to decode value)',
+            'Button1':''
+        }
+        log_response=self.rssions.post(url=url_login,headers=self.headers,data=data)
+        self.menu=self.responseMenu(log_response)         #菜单链接
+        self.name=re.findall(r'xm=(.*?)&gn',self.menu['信息查询'][0]['个人课表查询'],re.S)[0]
+        self.nameCode=self.name.encode('unicode_escape').decode().replace('\\u','%u')
+        # self.parseClassTime(self.menu)
+        fisrClss=self.resonsePara()
+        self.parseFClss(fisrClss)
+
+    def parseFClss(self, data):
+        print(data.text)
 
 
 if __name__ == '__main__':
